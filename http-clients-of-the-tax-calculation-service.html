@@ -957,7 +957,7 @@
 </ul>
 <h3 id="621-the-dao-layer">6.2.1. <span style="color: #1f4d78">The [dao] layer</span></h3>
 <p>The <strong>[dao]</strong> layer will be implemented by the following class, <strong>[Dao1.ts]</strong>:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;use strict&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
@@ -1148,7 +1148,7 @@
 </ul>
 <h3 id="622-the-main1-script">6.2.2. <span style="color: #1f4d78">The [main1] script</span></h3>
 <p>This script chains together a series of calls to the server via the <span style="color: #9a3412">Dao1</span> class: session initialization, authentication, three tax calculations (in parallel), a list of simulations, and the deletion of one of them:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// importing axios</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">import axios from &#x27;axios&#x27;;</span></span>
@@ -1349,122 +1349,122 @@
 <span class="normal"><a href="#__codelineno-1-120">120</a></span>
 <span class="normal"><a href="#__codelineno-1-121">121</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="s2">"-----------init-session"</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"init-session"</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">700</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="s2">"session démarrée avec type [json]"</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"init-session"</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session démarrée avec type [json]"</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="s2">"-----------authentifier-utilisateur"</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">{</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"authentifier-utilisateur"</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">  </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">  </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Authentification réussie [admin, admin]"</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authentifier-utilisateur"</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authentification réussie [admin, admin]"</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">}</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="s2">"-----------calculer-impot x 3"</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">[</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"calculer-impot"</span><span class="p">,</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"oui"</span><span class="p">,</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">502</span><span class="p">,</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">857</span><span class="p">,</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">126</span><span class="p">,</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.14</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calculer-impot"</span><span class="p">,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oui"</span><span class="p">,</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">857</span><span class="p">,</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">126</span><span class="p">,</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span>
 <a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">  </span><span class="p">},</span>
 <a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">    </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"calculer-impot"</span><span class="p">,</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="w">    </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="w">    </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">3250</span><span class="p">,</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">370</span><span class="p">,</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.3</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">    </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calculer-impot"</span><span class="p">,</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="w">    </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="w">    </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">3250</span><span class="p">,</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">370</span><span class="p">,</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span>
 <a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="w">  </span><span class="p">},</span>
 <a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="w">    </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"calculer-impot"</span><span class="p">,</span>
-<a id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="w">    </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span>
-<a id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="w">    </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
-<a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"30000"</span><span class="p">,</span>
-<a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">1687</span><span class="p">,</span>
-<a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.14</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="w">    </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calculer-impot"</span><span class="p">,</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="w">    </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="w">    </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30000"</span><span class="p">,</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1687</span><span class="p">,</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span>
 <a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="p">]</span>
 <a id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="s2">"-----------liste-des-simulations"</span>
 <a id="__codelineno-1-59" name="__codelineno-1-59"></a><span class="p">{</span>
-<a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="w">  </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"lister-simulations"</span><span class="p">,</span>
-<a id="__codelineno-1-61" name="__codelineno-1-61"></a><span class="w">  </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span>
-<a id="__codelineno-1-62" name="__codelineno-1-62"></a><span class="w">  </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lister-simulations"</span><span class="p">,</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-1-63" name="__codelineno-1-63"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-64" name="__codelineno-1-64"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
-<a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
-<a id="__codelineno-1-66" name="__codelineno-1-66"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
-<a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">3250</span><span class="p">,</span>
-<a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">370</span><span class="p">,</span>
-<a id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-71" name="__codelineno-1-71"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.3</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">3250</span><span class="p">,</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">370</span><span class="p">,</span>
+<a id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span>
 <a id="__codelineno-1-72" name="__codelineno-1-72"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-1-73" name="__codelineno-1-73"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-74" name="__codelineno-1-74"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"oui"</span><span class="p">,</span>
-<a id="__codelineno-1-75" name="__codelineno-1-75"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
-<a id="__codelineno-1-76" name="__codelineno-1-76"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
-<a id="__codelineno-1-77" name="__codelineno-1-77"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">502</span><span class="p">,</span>
-<a id="__codelineno-1-78" name="__codelineno-1-78"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-79" name="__codelineno-1-79"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">857</span><span class="p">,</span>
-<a id="__codelineno-1-80" name="__codelineno-1-80"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">126</span><span class="p">,</span>
-<a id="__codelineno-1-81" name="__codelineno-1-81"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.14</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oui"</span><span class="p">,</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">857</span><span class="p">,</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">126</span><span class="p">,</span>
+<a id="__codelineno-1-81" name="__codelineno-1-81"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span>
 <a id="__codelineno-1-82" name="__codelineno-1-82"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-1-83" name="__codelineno-1-83"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
-<a id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<a id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"30000"</span><span class="p">,</span>
-<a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">1687</span><span class="p">,</span>
-<a id="__codelineno-1-88" name="__codelineno-1-88"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-89" name="__codelineno-1-89"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-90" name="__codelineno-1-90"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.14</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
+<a id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30000"</span><span class="p">,</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1687</span><span class="p">,</span>
+<a id="__codelineno-1-88" name="__codelineno-1-88"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-89" name="__codelineno-1-89"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-90" name="__codelineno-1-90"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span>
 <a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="w">  </span><span class="p">]</span>
 <a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="p">}</span>
 <a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="s2">"-----------suppression simulation n° 1"</span>
 <a id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="p">{</span>
-<a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="w">  </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"supprimer-simulation"</span><span class="p">,</span>
-<a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="w">  </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">600</span><span class="p">,</span>
-<a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="w">  </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"supprimer-simulation"</span><span class="p">,</span>
+<a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span>
+<a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-1-100" name="__codelineno-1-100"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
-<a id="__codelineno-1-102" name="__codelineno-1-102"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
-<a id="__codelineno-1-103" name="__codelineno-1-103"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
-<a id="__codelineno-1-104" name="__codelineno-1-104"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">3250</span><span class="p">,</span>
-<a id="__codelineno-1-105" name="__codelineno-1-105"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">370</span><span class="p">,</span>
-<a id="__codelineno-1-106" name="__codelineno-1-106"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-107" name="__codelineno-1-107"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-108" name="__codelineno-1-108"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.3</span>
+<a id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
+<a id="__codelineno-1-102" name="__codelineno-1-102"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<a id="__codelineno-1-103" name="__codelineno-1-103"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45000"</span><span class="p">,</span>
+<a id="__codelineno-1-104" name="__codelineno-1-104"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">3250</span><span class="p">,</span>
+<a id="__codelineno-1-105" name="__codelineno-1-105"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">370</span><span class="p">,</span>
+<a id="__codelineno-1-106" name="__codelineno-1-106"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-107" name="__codelineno-1-107"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-108" name="__codelineno-1-108"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span>
 <a id="__codelineno-1-109" name="__codelineno-1-109"></a><span class="w">    </span><span class="p">},</span>
 <a id="__codelineno-1-110" name="__codelineno-1-110"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-111" name="__codelineno-1-111"></a><span class="w">      </span><span class="s2">"marié"</span><span class="o">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
-<a id="__codelineno-1-112" name="__codelineno-1-112"></a><span class="w">      </span><span class="s2">"enfants"</span><span class="o">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<a id="__codelineno-1-113" name="__codelineno-1-113"></a><span class="w">      </span><span class="s2">"salaire"</span><span class="o">:</span><span class="w"> </span><span class="s2">"30000"</span><span class="p">,</span>
-<a id="__codelineno-1-114" name="__codelineno-1-114"></a><span class="w">      </span><span class="s2">"impôt"</span><span class="o">:</span><span class="w"> </span><span class="mf">1687</span><span class="p">,</span>
-<a id="__codelineno-1-115" name="__codelineno-1-115"></a><span class="w">      </span><span class="s2">"surcôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-116" name="__codelineno-1-116"></a><span class="w">      </span><span class="s2">"décôte"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-117" name="__codelineno-1-117"></a><span class="w">      </span><span class="s2">"réduction"</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-1-118" name="__codelineno-1-118"></a><span class="w">      </span><span class="s2">"taux"</span><span class="o">:</span><span class="w"> </span><span class="mf">0.14</span>
+<a id="__codelineno-1-111" name="__codelineno-1-111"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"non"</span><span class="p">,</span>
+<a id="__codelineno-1-112" name="__codelineno-1-112"></a><span class="w">      </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<a id="__codelineno-1-113" name="__codelineno-1-113"></a><span class="w">      </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30000"</span><span class="p">,</span>
+<a id="__codelineno-1-114" name="__codelineno-1-114"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1687</span><span class="p">,</span>
+<a id="__codelineno-1-115" name="__codelineno-1-115"></a><span class="w">      </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-116" name="__codelineno-1-116"></a><span class="w">      </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-117" name="__codelineno-1-117"></a><span class="w">      </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-118" name="__codelineno-1-118"></a><span class="w">      </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span>
 <a id="__codelineno-1-119" name="__codelineno-1-119"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-120" name="__codelineno-1-120"></a><span class="w">  </span><span class="p">]</span>
 <a id="__codelineno-1-121" name="__codelineno-1-121"></a><span class="p">}</span>
@@ -1481,7 +1481,7 @@
 </ul>
 <h3 id="631-the-metier-class">6.3.1. <span style="color: #1f4d78">The [Métier] class</span></h3>
 <p>The tax calculation logic closely follows that of the PHP class from the <a href="https://stahe.github.io/php7-juillet-2019/"><u><span style="color: #0563c1">“Introduction to the PHP7 Language Through</span></u></a> Examples” course—we will not detail it again here; we are only interested in its translation into TypeScript:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;use strict&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// Business Class</span></span>
@@ -1682,7 +1682,7 @@
 <h3 id="632-the-class-dao2">6.3.2. <span style="color: #1f4d78">The class [Dao2]</span></h3>
 <p><img src="images/10000000000005DF000001A53E81FA2B.png" width="601" height="169" style="width:15.91cm;height:4.463cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005DF000001A53E81FA2B.png" /></p>
 <p>The <strong>[Dao2]</strong> class implements the <strong>[dao]</strong> layer of the JavaScript client above as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;use strict&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
@@ -1827,7 +1827,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003B1000001D9B2ABA2B3.png" width="283" height="142" style="display:inline-block; margin:4px;width:7.5cm;height:3.75cm;" class="odt-zoomable" data-zoom-src="images/10000000000003B1000001D9B2ABA2B3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The result of this query is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-json">
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#2e75b6">&quot;action&quot;</span>: <span style="color:#a31515">&quot;get-admindata&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#2e75b6">&quot;état&quot;</span>: 1000,</span></span>
@@ -1886,7 +1886,7 @@
 <h3 id="633-the-script-main2">6.3.3. <span style="color: #1f4d78">The script [main2]</span></h3>
 <p><img src="images/10000000000005D7000001B131AB47B5.png" width="598" height="173" style="width:15.82cm;height:4.583cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005D7000001B131AB47B5.png" /></p>
 <p>This script initializes the session, authenticates, retrieves the tax data, and then performs the tax calculations <strong>locally</strong> via the <span style="color: #9a3412">business</span> layer—these calculations no longer involve the server:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">import axios from &#x27;axios&#x27;;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -1959,7 +1959,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx tsx main2.ts
 </code></pre></div>
 <p><em>Execution result:</em></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-json">
 <span class="odt-code-line"><span class="odt-code-line-content">&quot;-----------<span style="background-color:#fff5ce">init-session</span>&quot;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  &quot;action&quot;: &quot;init-session&quot;,</span></span>
@@ -2079,7 +2079,7 @@
 <h3 id="641-changes-to-the-toolset-since-2019">6.4.1. <span style="color: #1f4d78">Changes to the Toolset Since 2019</span></h3>
 <p>The original document (2019) used <strong><span style="color: #9a3412">[babel-loader] </span></strong>to transpile the ES6 code into ES5, which is compatible with older browsers. Since our project is now written in TypeScript, we are replacing <span style="color: #9a3412">babel-loader </span>with <strong><span style="color: #9a3412">[ts-loader]</span></strong>, which natively supports the TypeScript syntax (types, interfaces, etc.)—something that Babel completely ignores.</p>
 <p>The project’s <strong><span style="color: #9a3412">[webpack.config.js]</span></strong> file (<span style="color: #9a3412">client</span> folder <span style="color: #9a3412">impots/client http 3</span>) configures the [webpack] module:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content">/* eslint-disable */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">const</span> <span style="color:#1f377f">path</span> = <span style="color:#74531f">require</span>(<span style="color:#a31515">&quot;path&quot;</span>);</span></span>
@@ -2165,13 +2165,13 @@
 <li>lines 48–56: the rule that associates every <span style="color: #9a3412">.ts </span>file in the <span style="color: #9a3412"><mark style="background-color: #fff5ce">src</mark></span> folder with the <strong><span style="color: #9a3412">[ts-loader]</span></strong> loader — this is the direct replacement for <span style="color: #9a3412">babel-loader </span>mentioned above.</li>
 </ul>
 <p>The contents of the [./src/index.ts] file are as follows:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2b91af">console</span>.<span style="color:#74531f">log</span>(<span style="color:#a31515">&quot;Bonjour le monde&quot;</span>);</span></span>
 </code></pre></div>
 
 <p>Keep in mind that the JavaScript code will be executed in a browser. Therefore, the previous line will not be written to a terminal but to the console of the browser running this code.</p>
 <p>The file <strong><span style="color: #9a3412">[package.json] </span></strong>in this subproject is as follows. It has its own scripts and dependencies (<span style="color: #9a3412">ts-loader</span>, <span style="color: #9a3412">TypeScript</span>, as well as <span style="color: #9a3412">core-js </span>and <span style="color: #9a3412">regenerator-runtime</span>, which are polyfills to ensure compatibility with older browsers):</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-json">
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#2e75b6">&quot;name&quot;</span>: <span style="color:#a31515">&quot;client-http-3&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#2e75b6">&quot;version&quot;</span>: <span style="color:#a31515">&quot;1.0.0&quot;</span>,</span></span>
@@ -2216,7 +2216,7 @@
 <p><span id="refheadingtoc225446640539168" name="refheadingtoc225446640539168" class="odt-bookmark-anchor"></span></p>
 <h3 id="642-compiling-and-running-the-project">6.4.2. <span style="color: #1f4d78">Compiling and Running the Project</span></h3>
 <p>The file <strong>[package.json]</strong> defines three tasks, <strong>[npm]</strong>:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-json">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2e75b6">&quot;scripts&quot;</span><span style="color:#000000">: {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;</span><span style="background-color:#fff5ce;color:#2e75b6">test</span><span style="color:#2e75b6">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2e75b6">&quot;</span><span style="background-color:#fff5ce;color:#2e75b6">build</span><span style="color:#2e75b6">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;webpack&quot;</span><span style="color:#000000">,</span></span></span>
@@ -2262,7 +2262,7 @@
 <li>to <strong>[3-4]</strong>, the <strong>[console]</strong> tab in the browser’s developer tools, in this case Microsoft Edge (set to F12);</li>
 <li>in <strong>[5]</strong>, the result of executing the file <strong>[src/index.ts]</strong>. Recall that the contents of that file were as follows:</li>
 </ul>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2b91af">console</span>.<span style="color:#74531f">log</span>(<span style="color:#a31515">&quot;Bonjour le monde&quot;</span>);</span></span>
 </code></pre></div>
 
@@ -2289,7 +2289,7 @@
 </ul>
 <h4 id="6431-the-main3-script">6.4.3.1. <span style="color: #1f4d78">The [main3] script</span></h4>
 <p>This script uses the content from <span style="color: #9a3412">main2.ts </span>(previous chapter), adapted for a browser (importing polyfills):</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> <span style="color:#1f377f">axios</span> <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;axios&#x27;</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> <span style="color:#a31515">&quot;</span><span style="background-color:#fff5ce;color:#a31515">core-js/stable</span><span style="color:#a31515">&quot;</span>;</span></span>
@@ -2372,7 +2372,7 @@
 </ul>
 <h4 id="6432-the-dao3-class">6.4.3.2. <span style="color: #1f4d78">The [Dao3] class</span></h4>
 <p>Since the session cookie is now managed by the [axios] module, we can remove the handling of this cookie from the [Dao] class:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#a31515">&#x27;use strict&#x27;;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">// imports</span></span>

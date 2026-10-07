@@ -783,7 +783,7 @@
 <p>Laragon comes with a comprehensive development environment. In this course, we will only use SGBD, MySQL, [6], and [heidisql] to manage it graphically;</p>
 <h2 id="42-installation-and-configuration-of-the-nestjs-server">4.2. <span style="color: #1f4d78">Installation and Configuration of the NestJS Server</span></h2>
 <p>A NestJS server for a highly simplified tax calculation can be found in the <code>nestjs-etude-de-cas</code> folder within the script directory for this course:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">nestjs-etude-de-cas/</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">├── package.json</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">├── nest-cli.json</span></span>
@@ -810,15 +810,15 @@
 <div style="margin:0 0 0.75em 0; background-color:#fff4ce; padding:0.35em 0.6em"><b>Note: </b>If you followed the batch installation described in the introduction (running `<span style="color: #9a3412">npm install` </span>at the root of `<span style="color: #9a3412">cours-typescript-nestjs-scripts`</span>), this step is already complete: proceed directly to the configuration below.</div>
 
 <p>The server needs a <span style="color: #9a3412">.env </span>file to specify the connection settings for the MySQL database created by Laragon (see above) as well as the listening port. Copy the provided <span style="color: #9a3412">.env.example </span>file to <span style="color: #9a3412">.env </span>and then customize it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PORT=3000
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>TAX_DATA_SOURCE=mysql
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>DB_HOST=localhost
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>DB_PORT=3306
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>DB_NAME=dbimpots-2019
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>DB_USER=admimpots
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>DB_PASSWORD=mdpimpots
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>CORS_ALLOWED=true
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>SESSION_SECRET=change-moi-en-production
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">PORT</span><span class="o">=</span><span class="s">3000</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">TAX_DATA_SOURCE</span><span class="o">=</span><span class="s">mysql</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">DB_HOST</span><span class="o">=</span><span class="s">localhost</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="na">DB_PORT</span><span class="o">=</span><span class="s">3306</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">DB_NAME</span><span class="o">=</span><span class="s">dbimpots-2019</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="na">DB_USER</span><span class="o">=</span><span class="s">admimpots</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="na">DB_PASSWORD</span><span class="o">=</span><span class="s">mdpimpots</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="na">CORS_ALLOWED</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="na">SESSION_SECRET</span><span class="o">=</span><span class="s">change-moi-en-production</span>
 </code></pre></div>
 <ul>
 <li><span style="color: #9a3412">PORT</span>: the listening port for the NestJS server (default is<span style="color: #9a3412"> 3000</span>).</li>
@@ -990,62 +990,62 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl -c cookies.txt "http://localhost:3000/main.php?action=init-session&amp;type=json"
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="s2">"action"</span><span class="o">:</span><span class="w"> </span><span class="s2">"init-session"</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="s2">"état"</span><span class="o">:</span><span class="w"> </span><span class="mf">700</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="s2">"réponse"</span><span class="o">:</span><span class="w"> </span><span class="s2">"session démarrée avec type [json]"</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"init-session"</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session démarrée avec type [json]"</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>Status code<span style="color: #9a3412"> 700 </span>confirms that the session has started—this is the same code returned by the server PHP. Now let’s authenticate using the <span style="color: #9a3412">[authentifier-utilisateur]</span> action—a <span style="color: #9a3412">POST</span> request, with a single parameter in the URL (<span style="color: #9a3412">action</span>) and the posted credentials:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl -b cookies.txt -c cookies.txt -X POST "http://localhost:3000/main.php?action=authentifier-utilisateur" \
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>     -d "user=admin&amp;password=admin"
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  "action": "authentifier-utilisateur",
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  "état": 200,
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  "réponse": "Authentification réussie [admin, admin]"
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"authentifier-utilisateur"</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authentification réussie [admin, admin]"</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>You can now calculate taxes using transaction <span style="color: #9a3412">[calculer-impot]</span>, or continue using <span style="color: #9a3412">POST </span>with the three posted parameters: <span style="color: #9a3412">marital status</span>, <span style="color: #9a3412">children, </span>and <span style="color: #9a3412">salary</span>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl -b cookies.txt -c cookies.txt -X POST "http://localhost:3000/main.php?action=calculer-impot" \
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>     -d "marié=oui&amp;enfants=2&amp;salaire=45000"
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  "action": "calculer-impot",
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  "état": 300,
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  "réponse": {
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    "marié": "oui",
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    "enfants": 2,
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    "salaire": 45000,
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    "impôt": 502,
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    "surcôte": 0,
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    "décôte": 857,
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    "réduction": 126,
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    "taux": 0.14
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>  }
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calculer-impot"</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oui"</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">857</span><span class="p">,</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">126</span><span class="p">,</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
 </code></pre></div>
 <p>The values are exactly the same (€502 in tax, a discount of €857, a reduction of 126 €, and a rate of 14%) as those displayed in the browser in the previous section—the two versions, HTML and jSON, share the same calculation engine. The list of simulations is obtained using the action <span style="color: #9a3412">[lister-simulations]</span>, a simple <span style="color: #9a3412">GET</span>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl -b cookies.txt -c cookies.txt "http://localhost:3000/main.php?action=lister-simulations"
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  "action": "lister-simulations",
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  "état": 500,
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  "réponse": [
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    {
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>      "marié": "oui", "enfants": 2, "salaire": 45000,
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>      "impôt": 502, "surcôte": 0, "décôte": 857, "réduction": 126, "taux": 0.14
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    }
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>  ]
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lister-simulations"</span><span class="p">,</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">      </span><span class="nt">"marié"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oui"</span><span class="p">,</span><span class="w"> </span><span class="nt">"enfants"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">"salaire"</span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">      </span><span class="nt">"impôt"</span><span class="p">:</span><span class="w"> </span><span class="mi">502</span><span class="p">,</span><span class="w"> </span><span class="nt">"surcôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"décôte"</span><span class="p">:</span><span class="w"> </span><span class="mi">857</span><span class="p">,</span><span class="w"> </span><span class="nt">"réduction"</span><span class="p">:</span><span class="w"> </span><span class="mi">126</span><span class="p">,</span><span class="w"> </span><span class="nt">"taux"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.14</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
 </code></pre></div>
 <p>Run the query <span style="color: #9a3412">[calculer-impot] </span>several times by changing the posted values, then use <span style="color: #9a3412">[supprimer-simulation] </span>to remove a simulation from the list (<span style="color: #9a3412">&amp;number=x </span>refers to its sequence number), and <span style="color: #9a3412">[get-admindata] </span>to retrieve the entire database in the format jSON (tax brackets and calculation constants). Finally, end the session with the action <span style="color: #9a3412">[fin-session]</span>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>curl -b cookies.txt -c cookies.txt "http://localhost:3000/main.php?action=fin-session"
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>{
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  "action": "fin-session",
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  "état": 400,
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>  "réponse": "session supprimée"
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fin-session"</span><span class="p">,</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">"état"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">"réponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session supprimée"</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>You now have a good understanding of the API jSON exposed by the NestJS tax calculation server—which is exactly the same as that of the PHP server. We can now move on to writing TypeScript scripts that query this server.</p>
 
