@@ -554,14 +554,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-http-and-typescript-functions.html" class="md-nav__link">
+      <a href="the-http-functions-of-typescript.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. The HTTP and TypeScript functions
+    5. The HTTP Functions of TypeScript
   
 
     
@@ -750,7 +750,7 @@
 <h2 id="22-setting-up-the-vscode-project">2.2. <span style="color: #2e74b5">Setting up the VSCode project</span></h2>
 <p>The code folder for this course is as follows:</p>
 <p><img src="images/10000000000001F3000001AD316A45FE.png" width="250" height="215" style="width:6.602cm;height:5.676cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F3000001AD316A45FE.png" /></p>
-<p>This folder corresponds to the complete script directory structure (<span style="color: #9a3412">cours-typescript-nestjs-scripts/</span>) presented in the introduction to this document, which you have downloaded. Open the <span style="color: #9a3412">typescript-fundamentals/</span> subfolder in VSCode: this is where the scripts for the first chapters of this course are located. It already contains, at its root, the two files <span style="color: #9a3412">package.json </span>and <span style="color: #9a3412">tsconfig.json</span>—let’s take a look at them.</p>
+<p>This folder corresponds to the complete script directory structure (typescript-nestjs-course-scripts/) presented in the introduction to this document, which you have downloaded. Open the <span style="color: #9a3412">typescript-fundamentals/</span> subfolder in VSCode: this is where the scripts for the first chapters of this course are located. It already contains, at its root, the two files <span style="color: #9a3412">package.json </span>and <span style="color: #9a3412">tsconfig.json</span>—let’s take a look at them.</p>
 <h3 id="221-the-file-packagejson">2.2.1. <span style="color: #1f4d78">The file <code>package.json</code></span></h3>
 <p>This file lists the project’s dependencies. It also specifies <span style="color: #9a3412"><code>"type": "module"</code></span>, so that <code>Node.js</code> natively treats our files as <code>ECMAScript</code> modules (with <span style="color: #9a3412">import/export</span>), without needing an intermediary tool as was the case in 2019 with the <span style="color: #9a3412">esm</span> package.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
@@ -792,16 +792,16 @@
 </code></pre></div>
 <div style="margin:0 0 0.75em 0; background-color:#fff4ce; padding:0.35em 0.6em"><b>Important: </b>Starting with TypeScript 6.0, the <span style="color: #9a3412">&quot;types&quot; </span>line<span style="color: #9a3412">: [&quot;node&quot;] </span>is essential: without it, TypeScript no longer automatically recognizes Node.js global objects such as `<span style="color: #9a3412">console` </span>or `<span style="color: #9a3412">process`</span>, unlike versions prior to 6.0.</div>
 
-<div style="margin:0 0 0.75em 0; background-color:#fff4ce; padding:0.35em 0.6em"><b>Note: </b>There is nothing to install here. As with all other folders in the directory tree, the dependencies for <span style="color: #9a3412">`typescript-fundamentals/`</span>—and for all the scripts in this course—have already been installed by a single <span style="color: #9a3412">`npm install` command</span>, run once at the root of <span style="color: #9a3412">`cours-typescript-nestjs-scripts/` </span>(see the introduction to this document): This is shown by the <span style="color: #9a3412">node_modules</span> folder already present at the root in the screenshot above, thanks to <b><span style="color: #9a3412">[npm workspaces]</span></b>. The project is therefore ready to use as soon as you download it.</div>
+<div style="margin:0 0 0.75em 0; background-color:#fff4ce; padding:0.35em 0.6em"><b>Note: </b>There is nothing to install here. As with all other folders in the directory tree, the dependencies for <span style="color: #9a3412">`typescript-fundamentals/`</span>—and for all the scripts in this course—have already been installed by a single <span style="color: #9a3412">`npm install` command</span>, run once at the root of <span style="color: #9a3412">`typescript-nestjs-course-scripts/` </span>(see the introduction to this document): This is shown by the <span style="color: #9a3412">node_modules</span> folder already present at the root in the screenshot above, thanks to <b><span style="color: #9a3412">[npm workspaces]</span></b>. The project is therefore ready to use as soon as you download it.</div>
 
 <p>If you haven’t downloaded the directory structure yet, or if you need to reinstall its dependencies, here’s a reminder of the single command to run—just once—at the root directory; it will install all the Node.js modules required for all the course scripts:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>npm install
 </code></pre></div>
-<p>The following commands are entered in a VSCode terminal with the directory set to [typescript-fondamentaux].</p>
+<p>The following commands are entered in a VSCode terminal with the directory set to [typescript-fundamentals].</p>
 <p><img src="images/10000000000001C9000005F9C1F3C68E.png" width="229" height="765" style="width:6.047cm;height:20.228cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C9000005F9C1F3C68E.png" /></p>
 <h2 id="23-first-script">2.3. <span style="color: #2e74b5">First script</span></h2>
 <p>Let’s create a file named <span style="color: #9a3412">tests/test-01.ts</span>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// A First Program TypeScript</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// a 1st TypeScript program</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">);</span>
 </code></pre></div>
 <p>Run it from the terminal, in the project root directory:</p>
